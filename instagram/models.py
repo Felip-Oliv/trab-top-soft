@@ -45,5 +45,6 @@ class Posts(database.Model):
 
 class Comentarios(database.Model):
     id = database.Column(database.Integer, primary_key=True)
-    post_text = database.Column(database.String, default='')
+    coment_text = database.Column(database.String, default='')
     post_id = database.Column(database.Integer, database.ForeignKey('posts.id'), nullable=False)
+    user_id = database.Colum(database.Integer, database.ForeignKey('post_id'), nullable=False)

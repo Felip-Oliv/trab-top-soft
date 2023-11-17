@@ -30,6 +30,9 @@ class FormCreateNewPost(FlaskForm):
     photo = FileField('Imagem', validators=[DataRequired()])
     btn = SubmitField('Publicar')
 
+class FormCreateNewComent(FlaskForm):
+    text = StringField('Texto', widget=TextArea(), validators=[DataRequired])
+    btn = SubmitField('Enviar')
 
 class FormFollow(FlaskForm):
     btn = SubmitField('Seguir')

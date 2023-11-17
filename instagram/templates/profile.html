@@ -75,6 +75,7 @@
                     <div class="card-body">
                         <p class="card-text">{{ post.post_text }}</p>
                         <img src="{{ url_for('static', filename='fotos_dos_posts/{}'.format(post.post_img) ) }}" class="img-fluid" alt="Post Image">
+                        <p class="card-text">{{}}</p>
                     </div>
                 </div>
             {% endfor %}

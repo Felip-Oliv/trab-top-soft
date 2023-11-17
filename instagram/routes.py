@@ -4,10 +4,10 @@ from flask import render_template, redirect, url_for, request
 from flask_login import login_required, login_user, logout_user, current_user
 from werkzeug.utils import secure_filename
 
-from instagram.models import load_user, User, Posts, Follow, Block
+from instagram.models import load_user, User, Posts, Follow, Block, Comentarios
 from instagram import app, database
 from instagram.forms import FormLogin, FormCreateNewAccount, FormCreateNewPost, FormFollow, FormUnfollow, FormBlock, \
-    FormUnblock
+    FormUnblock, FormCreateNewComent
 from instagram import bcrypt
 from instagram import login_manager
 
@@ -54,13 +54,14 @@ def homepage():
 def profile(user_id):
     if int(user_id) == int(current_user.id):
         _formNewPost = FormCreateNewPost()
+        _formNewComent = FormCreateNewComent()
 
         posts = current_user.posts.all()
         posts.sort(key=lambda x: x.creation_date, reverse=True)
 
         if _formNewPost.validate_on_submit():
             _post_text = _formNewPost.text.data
-
+            _coment_text = _formNewComent.text.data
             _post_img = _formNewPost.photo.data
             _img_name = secure_filename(_post_img.filename)
             path = os.path.abspath(os.path.dirname(__file__))
@@ -73,7 +74,10 @@ def profile(user_id):
                             post_img=_img_name,
                             user_id=int(current_user.id)
                             )
-
+            newComent = Comentarios( comnt_text=_coment_text,
+                                     
+                
+            )
             database.session.add(newPost)
             database.session.commit()
 
