@@ -42,3 +42,8 @@ class Posts(database.Model):
     post_img = database.Column(database.String, default='default.png')
     creation_date = database.Column(database.String, nullable=False, default=datetime.utcnow())
     user_id = database.Column(database.Integer, database.ForeignKey('user.id'), nullable=False)
+
+class Comentarios(database.Model):
+    id = database.Column(database.Integer, primary_key=True)
+    post_text = database.Column(database.String, default='')
+    post_id = database.Column(database.Integer, database.ForeignKey('posts.id'), nullable=False)
