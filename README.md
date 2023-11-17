@@ -81,6 +81,6 @@ Click here to see the commit/branch name standard
 
 ## 📧 Contact
 
-Vinícius Kruchelski Gugelmin - vinigugelmin@gmail.com
+Luiz Felipe A. Oliveira - fo689172@gmail.com
 
-Project Link: [https://github.com/viniciusgugelmin/instagram-python](https://github.com/viniciusgugelmin/instagram-python)
+Project Link: [https://github.com/Felip-Oliv/trab-top-soft](https://github.com/Felip-Oliv/trab-top-soft)
