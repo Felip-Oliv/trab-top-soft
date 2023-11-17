@@ -45,3 +45,6 @@ class FormBlock(FlaskForm):
 
 class FormUnblock(FlaskForm):
     btn = SubmitField('Desbloquear')
+    
+class CreateNewComentario(FlaskForm):
+    text = StringField('Texto', widget=TextArea(), validators=[DataRequired()])
