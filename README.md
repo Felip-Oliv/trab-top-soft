@@ -55,6 +55,9 @@ Install the dependencies
 $ pip install requirements.txt
 ```
 
+```bash
+$python criar_banco.py
+```
 Run the application:
 
 ```bash
